@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Admin Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>AdminPro</span>
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li>
+                <i class="fa-solid fa-users"></i>
+                Users
+            </li>
+
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Analytics
+            </li>
+
+            <li>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Orders
+            </li>
+
+            <li>
+                <i class="fa-solid fa-wallet"></i>
+                Revenue
+            </li>
+
+            <li>
+                <i class="fa-solid fa-envelope"></i>
+                Messages
+            </li>
+
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Navbar -->
+        <header class="topbar">
+            <button class="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+            <div class="search-box">
+                <i class="fa-solid fa-search"></i>
+                <input
+                type="text"
+                id="searchInput"
+                placeholder="Search here...">
+            </div>
+
+            <div class="top-right">
+
+                <button class="theme-btn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="notify">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
+<div class="date-time">
+    <span id="currentDate"></span>
+    <span id="currentTime"></span>
+</div>
+                <div class="profile">
+
+                    <img src="./Saroj.jpg" alt="Saroj">
+
+                    <div>
+                        <h4>Saroj</h4>
+                        <small>Administrator</small>
+                    </div>
+
+                </div>
+</div>
+ <!-- top-right -->
+   </header>
+
+<!-- Welcome Section -->
+
+<section class="welcome">
+
+    <div>
+
+        <h1>Welcome Back, Saroj 👋</h1>
+
+        <p>
+            Here's what's happening with your business today.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Dashboard Cards -->
+
+<section class="cards">
+
+    <div class="card blue">
+
+        <div>
+
+            <h4>Total Users</h4>
+
+            <h2 class="counter" data-target="12540">0</h2>  
+           <span>+18% This Month</span>
+
+        </div>
+
+        <i class="fa-solid fa-users"></i>
+ </div>
+
+
+    <div class="card green">
+
+        <div>
+
+            <h4>Total Revenue</h4>
+
+        
+<h2 class="counter" data-target="875000">0</h2> 
+
+            <span>+24% This Month</span>
+
+        </div>
+
+        <i class="fa-solid fa-wallet"></i>
+
+    </div>
+
+
+    <div class="card orange">
+
+        <div>
+
+            <h4>Orders</h4>
+
+            <h2 class="counter" data-target="1248">0</h2>
+
+            <span>+10% This Week</span>
+
+        </div>
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+    </div>
+
+    <div class="card purple">
+
+        <div>
+
+            <h4>Profit</h4>
+
+            <h2 class="counter" data-target="210000">0</h2>
+
+            <span>+12% Growth</span>
+
+        </div>
+
+        <i class="fa-solid fa-chart-line"></i>
+
+    </div>
+
+</section>
+
+
+<!-- Charts -->
+
+<section class="charts">
+
+    <div class="chart-card">
+
+        <h3>Revenue Overview</h3>
+
+        <canvas id="salesChart"></canvas>
+
+    </div>
+
+    <div class="chart-card">
+
+        <h3>Users Analytics</h3>
+
+        <canvas id="userChart"></canvas>
+
+    </div>
+
+</section>
+
+<!-- Bottom Section -->
+
+<section class="bottom-section">
+
+    <!-- Recent Orders -->
+
+    <div class="table-card">
+
+        <h3>Recent Orders</h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>#1025</td>
+                    <td>Rahul</td>
+                    <td><span class="status completed">Completed</span></td>
+                    <td>₹12,500</td>
+                </tr>
+
+                <tr>
+                    <td>#1026</td>
+                    <td>Priya</td>
+                    <td><span class="status pending">Pending</span></td>
+                    <td>₹8,400</td>
+                </tr>
+
+                <tr>
+                    <td>#1027</td>
+                    <td>Arjun</td>
+                    <td><span class="status processing">Processing</span></td>
+                    <td>₹5,900</td>
+                </tr>
+
+                <tr>
+                    <td>#1028</td>
+                    <td>Sneha</td>
+                    <td><span class="status completed">Completed</span></td>
+                    <td>₹18,250</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+   <!-- Right Side -->
+
+    <div class="right-panel">
+
+        <div class="profile-card">
+
+            <img src="./Saroj.jpg" alt="Saroj">
+
+            <h3>Saroj</h3>
+
+            <p>Full Stack Developer</p>
+ </div>
+
+        <div class="activity-card">
+
+            <h3>Today's Activity</h3>
+
+            <ul>
+
+                <li>✅ 42 New Users</li>
+                <li>💰 Revenue +₹25,000</li>
+                <li>📦 18 Orders Delivered</li>
+                <li>⭐ Customer Rating 4.9/5</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
