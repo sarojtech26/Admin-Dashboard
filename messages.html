@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Messages | Premium Admin Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<span>AdminPro</span>
+
+</div>
+
+<ul class="menu">
+
+<li>
+<a href="index.html">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="users.html">
+<i class="fa-solid fa-users"></i>
+Users
+</a>
+</li>
+
+<li>
+<a href="analytics.html">
+<i class="fa-solid fa-chart-line"></i>
+Analytics
+</a>
+</li>
+
+<li>
+<a href="orders.html">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</a>
+</li>
+
+<li>
+<a href="revenue.html">
+<i class="fa-solid fa-wallet"></i>
+Revenue
+</a>
+</li>
+
+<li class="active">
+<a href="messages.html">
+<i class="fa-solid fa-envelope"></i>
+Messages
+</a>
+</li>
+
+<li>
+<a href="settings.html">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+</li>
+
+</ul>
+
+</aside>
+
+<main class="main-content">
+    
+<!-- Topbar -->
+
+<header class="topbar">
+
+    <button class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="search-box">
+        <i class="fa-solid fa-search"></i>
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search messages...">
+    </div>
+
+    <div class="top-right">
+
+        <button class="theme-btn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <div class="profile">
+
+            <img src="./Saroj.jpg" alt="Saroj">
+
+            <div>
+
+                <h4>Saroj</h4>
+
+                <small>Administrator</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- Welcome -->
+
+<section class="welcome">
+
+    <div>
+
+        <h1>Messages 💬</h1>
+
+        <p>
+            View customer conversations, unread messages and support requests.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Statistics -->
+
+<section class="cards">
+
+    <div class="card blue">
+
+        <div>
+
+            <h4>Total Messages</h4>
+
+            <h2 class="counter" data-target="1842">0</h2>
+
+            <span>+18% This Week</span>
+
+        </div>
+
+        <i class="fa-solid fa-envelope"></i>
+
+    </div>
+
+    <div class="card green">
+
+        <div>
+
+            <h4>Unread</h4>
+
+            <h2 class="counter" data-target="42">0</h2>
+
+            <span>Needs Attention</span>
+
+        </div>
+
+        <i class="fa-solid fa-envelope-open"></i>
+
+    </div>
+
+    <div class="card orange">
+
+        <div>
+
+            <h4>Replied</h4>
+
+            <h2 class="counter" data-target="1735">0</h2>
+
+            <span>94% Response Rate</span>
+
+        </div>
+
+        <i class="fa-solid fa-reply"></i>
+
+    </div>
+
+    <div class="card purple">
+
+        <div>
+
+            <h4>Support Tickets</h4>
+
+            <h2 class="counter" data-target="65">0</h2>
+
+            <span>Open Cases</span>
+
+        </div>
+
+        <i class="fa-solid fa-headset"></i>
+
+    </div>
+
+</section>
+
+<!-- Messages Section -->
+
+<section class="bottom-section">
+
+    <div class="table-card">
+
+        <h3>Recent Messages</h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Rahul Sharma</td>
+                    <td>rahul@gmail.com</td>
+                    <td>Order Inquiry</td>
+                    <td><span class="status completed">Replied</span></td>
+                </tr>
+
+                <tr>
+                    <td>Priya Patel</td>
+                    <td>priya@gmail.com</td>
+                    <td>Refund Request</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+
+                <tr>
+                    <td>Arjun Kumar</td>
+                    <td>arjun@gmail.com</td>
+                    <td>Account Issue</td>
+                    <td><span class="status processing">In Progress</span></td>
+                </tr>
+
+                <tr>
+                    <td>Sneha Singh</td>
+                    <td>sneha@gmail.com</td>
+                    <td>Payment Failed</td>
+                    <td><span class="status completed">Resolved</span></td>
+                </tr>
+
+                <tr>
+                    <td>Amit Verma</td>
+                    <td>amit@gmail.com</td>
+                    <td>Product Feedback</td>
+                    <td><span class="status completed">Closed</span></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Right Panel -->
+
+    <div class="right-panel">
+
+        <div class="profile-card">
+
+            <img src="./Saroj.jpg" alt="Saroj">
+
+            <h3>Saroj</h3>
+
+            <p>Full Stack Developer</p>
+
+        </div>
+
+        <div class="activity-card">
+
+            <h3>Recent Chats</h3>
+
+            <ul>
+
+                <li>💬 Rahul sent a new message</li>
+
+                <li>📩 Priya requested refund</li>
+
+                <li>✅ Sneha conversation resolved</li>
+
+                <li>⭐ Amit left positive feedback</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+</main>
+
+</div>
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

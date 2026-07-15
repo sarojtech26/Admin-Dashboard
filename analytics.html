@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | AdminPro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Admin<span>Pro</span></h2>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="index.html">
+                    🏠 Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="users.html">
+                    👥 Users
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="analytics.html">
+                    📊 Analytics
+                </a>
+            </li>
+
+            <li>
+                <a href="orders.html">
+                    🛒 Orders
+                </a>
+            </li>
+
+            <li>
+                <a href="revenue.html">
+                    💰 Revenue
+                </a>
+            </li>
+
+            <li>
+                <a href="messages.html">
+                    💬 Messages
+                </a>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    ⚙ Settings
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <div>
+                <h1>Analytics Dashboard 📊</h1>
+                <p>Track business growth and performance.</p>
+            </div>
+
+        </div>
+
+        <div class="analytics-cards">
+
+            <div class="card blue">
+                <h3>Total Visitors</h3>
+                <h2>28,540</h2>
+                <span>+18% this month</span>
+            </div>
+
+            <div class="card green">
+                <h3>Revenue</h3>
+                <h2>₹9,75,000</h2>
+                <span>+12% Growth</span>
+            </div>
+
+            <div class="card orange">
+                <h3>Orders</h3>
+                <h2>1,548</h2>
+                <span>+8% Increase</span>
+            </div>
+
+            <div class="card purple">
+                <h3>Conversion</h3>
+                <h2>92%</h2>
+                <span>Excellent</span>
+            </div>
+            
+        <div class="charts-container">
+
+            <div class="chart-card">
+                <h2>Sales Overview</h2>
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h2>User Growth</h2>
+                <canvas id="usersChart"></canvas>
+            </div>
+
+        </div>
+
+        <div class="chart-card">
+            <h2>Revenue Sources</h2>
+            <canvas id="revenueChart"></canvas>
+        </div>
+
+        <div class="recent-activity">
+
+            <h2>Recent Analytics</h2>
+
+            <table>
+
+                <tr>
+                    <th>Metric</th>
+                    <th>Status</th>
+                    <th>Growth</th>
+                </tr>
+
+                <tr>
+                    <td>Website Visitors</td>
+                    <td>Active</td>
+                    <td style="color:#00ff99;">+18%</td>
+                </tr>
+
+                <tr>
+                    <td>Orders</td>
+                    <td>Increasing</td>
+                    <td style="color:#00ff99;">+8%</td>
+                </tr>
+
+                <tr>
+                    <td>Revenue</td>
+                    <td>Excellent</td>
+                    <td style="color:#00ff99;">+12%</td>
+                </tr>
+
+                <tr>
+                    <td>Customer Satisfaction</td>
+                    <td>Very Good</td>
+                    <td style="color:#00ff99;">96%</td>
+                </tr>
+
+            </table>
+            
+
+        </div>
+
+    </main>
+
+    <div class="right">
+
+        <div class="top">
+            <button class="theme-toggler">
+                <span>🌞</span>
+                <span>🌙</span>
+            </button>
+        </div>
+
+        <div class="profile">
+            <div class="info">
+                <p><b>Hey, Saroj</b></p>
+                <small>Admin</small>
+            </div>
+
+            <div class="profile-photo">
+                <img src="Saroj.jpg" alt="Profile">
+            </div>
+        </div>
+
+        <div class="updates">
+
+            <h2>Analytics Summary</h2>
+
+            <div class="update">
+                <p>🔥 Sales increased by <b>18%</b> this month.</p>
+            </div>
+
+            <div class="update">
+                <p>👥 New users increased by <b>640</b>.</p>
+            </div>
+
+            <div class="update">
+                <p>💰 Revenue crossed <b>$30K</b>.</p>
+            </div>
+
+            <div class="update">
+                <p>⭐ Customer Satisfaction reached <b>96%</b>.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

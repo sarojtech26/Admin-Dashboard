@@ -1,4 +1,49 @@
 
+// ===============================
+// Local Storage Functions
+// ===============================
+
+function saveUsers() {
+    const users = [];
+
+    document.querySelectorAll(".users-table tbody tr").forEach(row => {
+        const cells = row.querySelectorAll("td");
+
+        users.push({
+            name: cells[0].innerText,
+            email: cells[1].innerText,
+            role: cells[2].innerText,
+            status: cells[3].innerText
+        });
+    });
+
+    localStorage.setItem("users", JSON.stringify(users));
+}
+
+function loadUsers() {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const tbody = document.querySelector(".users-table tbody");
+
+    if (!tbody) return;
+
+    tbody.innerHTML = "";
+
+    users.forEach(user => {
+        tbody.insertAdjacentHTML("beforeend", `
+            <tr>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.role}</td>
+                <td><span class="status active">${user.status}</span></td>
+                <td>
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </td>
+            </tr>
+        `);
+    });
+}
 // Revenue Chart
 
 const salesChart = document.getElementById("salesChart");
@@ -102,11 +147,13 @@ color:"#ffffff"
 // Dark / Light Mode
 
 const themeBtn=document.querySelector(".theme-btn");
+if(themeBtn){
 
 themeBtn.addEventListener("click",()=>{
 
 document.body.classList.toggle("light-mode");
 });
+}
 
 // Notification Button Animation
 
@@ -173,11 +220,16 @@ window.addEventListener("load", () => {
 function updateDateTime() {
     const now = new Date();
 
-    document.getElementById("currentDate").innerHTML =
-        now.toLocaleDateString("en-IN");
+    const currentDate = document.getElementById("currentDate");
+    const currentTime = document.getElementById("currentTime");
 
-    document.getElementById("currentTime").innerHTML =
-        now.toLocaleTimeString("en-IN");
+    if (currentDate) {
+        currentDate.innerHTML = now.toLocaleDateString("en-IN");
+    }
+
+    if (currentTime) {
+        currentTime.innerHTML = now.toLocaleTimeString("en-IN");
+    }
 }
 
 updateDateTime();
@@ -210,23 +262,199 @@ if(menuToggle){
         sidebar.classList.toggle("active");
     });
 }
-// Search Feature
-const searchInput = document.getElementById("searchInput");
+
+/* ===========================
+   Analytics Charts
+=========================== */
+
+if (document.getElementById("usersChart")) {
+    console.log("user chart loading");
+    new Chart(document.getElementById("usersChart"), {
+        type: "bar",
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+            datasets: [{
+                label: "Users",
+                data: [120, 180, 250, 320, 450, 640],
+                backgroundColor: "#4CAF50",
+                borderRadius: 8
+            }],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+
+                    labels: {
+                     color: "#fff"
+                }
+            },
+
+            },
+            scales: {
+                x: {
+                    ticks: { color: "#fff" },
+                    grid: { color: "#333" }
+                },
+                y: {
+                    ticks: { color: "#fff" },
+                    grid: { color: "#333" }
+                }
+            }
+        }
+    });
+}
+
+if (document.getElementById("revenueChart")) {
+    new Chart(document.getElementById("revenueChart"), {
+        type: "doughnut",
+        data: {
+            labels: ["Products", "Services", "Subscriptions"],
+            datasets: [{
+                label:"Revenue",
+                data: [55, 25, 20],
+                backgroundColor: [
+                    "#4CAF50",
+                    "#42A5F5",
+                    "#FF9800"
+                ],
+                borderWidth: 0
+            }],
+        },
+        
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: "bottom",
+                    labels: {
+                        color: "#fff"
+                    }
+                }
+            }
+        }
+    });
+}
+
+/* ===========================
+   ADD USER MODAL
+=========================== */
+
+const addUserBtn = document.querySelector(".add-user-btn");
+const userModal = document.getElementById("userModal");
+const closeModal = document.querySelector(".close");
+const saveUserBtn = document.getElementById("saveUserBtn");
+const usersTable = document.querySelector(".users-table tbody");
+
+if (addUserBtn && userModal) {
+
+    addUserBtn.onclick = () => {
+        userModal.style.display = "flex";
+    };
+
+    closeModal.onclick = () => {
+        userModal.style.display = "none";
+        saveUsers();
+        alert("user Added Successfully!");
+    };
+
+    window.onclick = (e) => {
+        if (e.target === userModal) {
+            userModal.style.display = "none";
+        }
+    };
+
+    saveUserBtn.onclick = () => {
+
+        const name = document.getElementById("userName").value.trim();
+        const email = document.getElementById("userEmail").value.trim();
+        const role = document.getElementById("userRole").value;
+
+        if (name === "" || email === "") {
+            alert("Please fill all fields.");
+            return;
+        }
+
+        const row = `
+            <tr>
+                <td>${name}</td>
+                <td>${email}</td>
+                <td>${role}</td>
+                <td><span class="status active">Active</span></td>
+                <td>
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </td>
+            </tr>
+        `;
+
+        usersTable.insertAdjacentHTML("beforeend", row);
+
+        document.getElementById("userName").value = "";
+        document.getElementById("userEmail").value = "";
+        document.getElementById("userRole").selectedIndex = 0;
+
+        userModal.style.display = "none";
+
+        alert("User Added Successfully!");
+    };
+
+}
+document.addEventListener("click", function (e) {
+
+    if (e.target.classList.contains("delete-btn")) {
+
+        if (confirm("Are you sure you want to delete this user?")) {
+
+            e.target.closest("tr").remove();
+            saveUsers();
+        }
+
+    }
+
+});
+document.addEventListener("click", function (e) {
+
+    if (e.target.classList.contains("edit-btn")) {
+
+        const row = e.target.closest("tr");
+
+        const name = row.cells[0].innerText;
+        const email = row.cells[1].innerText;
+        const role = row.cells[2].innerText;
+
+        document.getElementById("userName").value = name;
+        document.getElementById("userEmail").value = email;
+        document.getElementById("userRole").value = role;
+
+        userModal.style.display = "flex";
+
+        
+    }
+
+});
+
+window.addEventListener("DOMContentLoaded", loadUsers);
+const searchInput = document.getElementByI("searchInput");
+console.log(searchInput);
 
 if (searchInput) {
     searchInput.addEventListener("keyup", function () {
+
         const value = this.value.toLowerCase();
+        const rows = document.querySelectorAll(".users-table tbody tr");
 
-        // Search Dashboard Cards
-        document.querySelectorAll(".card").forEach((card) => {
-            const text = card.innerText.toLowerCase();
-            card.style.display = text.includes(value) ? "flex" : "none";
-        });
-
-        // Search Recent Orders Table
-        document.querySelectorAll("tbody tr").forEach((row) => {
+        rows.forEach(row => {
             const text = row.innerText.toLowerCase();
-            row.style.display = text.includes(value) ? "" : "none";
+
+            if (text.includes(value)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
         });
+
     });
 }

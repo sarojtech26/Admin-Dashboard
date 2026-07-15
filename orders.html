@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Orders | Premium Admin Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>AdminPro</span>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="users.html">
+                    <i class="fa-solid fa-users"></i>
+                    Users
+                </a>
+            </li>
+
+            <li>
+                <a href="analytics.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Analytics
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="orders.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Orders
+                </a>
+            </li>
+
+            <li>
+                <a href="revenue.html">
+                    <i class="fa-solid fa-wallet"></i>
+                    Revenue
+                </a>
+            </li>
+
+            <li>
+                <a href="messages.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    Messages
+                </a>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Topbar -->
+
+        <header class="topbar">
+
+            <button class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="search-box">
+                <i class="fa-solid fa-search"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search Orders...">
+            </div>
+
+            <div class="top-right">
+
+                <button class="theme-btn">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <div class="profile">
+
+                    <img src="./Saroj.jpg" alt="Saroj">
+
+                    <div>
+
+                        <h4>Saroj</h4>
+
+                        <small>Full Stack Developer</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Page Heading -->
+
+        <section class="welcome">
+
+            <div>
+
+                <h1>
+                    Orders Management 📦
+                </h1>
+
+                <p>
+                    Manage customer orders, shipping status and recent transactions.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Statistics Cards -->
+
+        <section class="cards">
+            
+<!-- Card 1 -->
+
+<div class="card blue">
+
+    <div>
+
+        <h4>Total Orders</h4>
+
+        <h2 class="counter" data-target="1248">0</h2>
+
+        <span>+18% This Month</span>
+
+    </div>
+
+    <i class="fa-solid fa-cart-shopping"></i>
+
+</div>
+
+<!-- Card 2 -->
+
+<div class="card green">
+
+    <div>
+
+        <h4>Completed</h4>
+
+        <h2 class="counter" data-target="980">0</h2>
+
+        <span>78% Success Rate</span>
+
+    </div>
+
+    <i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<!-- Card 3 -->
+
+<div class="card orange">
+
+    <div>
+
+        <h4>Pending</h4>
+
+        <h2 class="counter" data-target="182">0</h2>
+
+        <span>Needs Review</span>
+
+    </div>
+
+    <i class="fa-solid fa-clock"></i>
+
+</div>
+
+<!-- Card 4 -->
+
+<div class="card purple">
+
+    <div>
+
+        <h4>Cancelled</h4>
+
+        <h2 class="counter" data-target="86">0</h2>
+
+        <span>Last 30 Days</span>
+
+    </div>
+
+    <i class="fa-solid fa-ban"></i>
+
+</div>
+
+</section>
+
+<!-- Orders Table -->
+
+<section class="bottom-section">
+
+<div class="table-card">
+
+<h3>Recent Orders</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Order ID</th>
+
+<th>Customer</th>
+
+<th>Status</th>
+
+<th>Amount</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>#10251</td>
+
+<td>Rahul</td>
+
+<td><span class="status completed">Completed</span></td>
+
+<td>₹12,500</td>
+
+</tr>
+
+<tr>
+
+<td>#10252</td>
+
+<td>Priya</td>
+
+<td><span class="status pending">Pending</span></td>
+
+<td>₹8,400</td>
+
+</tr>
+
+<tr>
+
+<td>#10253</td>
+
+<td>Arjun</td>
+
+<td><span class="status processing">Processing</span></td>
+
+<td>₹5,900</td>
+
+</tr>
+
+<tr>
+
+<td>#10254</td>
+
+<td>Sneha</td>
+
+<td><span class="status completed">Completed</span></td>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Right Side -->
+
+<div class="right-panel">
+
+    <div class="profile-card">
+
+        <img src="./Saroj.jpg" alt="Saroj">
+
+        <h3>Saroj</h3>
+
+        <p>Full Stack Developer</p>
+
+    </div>
+
+    <div class="activity-card">
+
+        <h3>Today's Activity</h3>
+
+        <ul>
+
+            <li>🛒 42 New Orders</li>
+
+            <li>💰 Revenue +₹25,000</li>
+
+            <li>📦 18 Orders Delivered</li>
+
+            <li>⭐ Customer Rating 4.9/5</li>
+
+            <li>🚚 12 Orders Shipped</li>
+
+            <li>📈 Sales Growth +18%</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

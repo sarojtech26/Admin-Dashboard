@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Revenue | Premium Admin Dashboard</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Chart JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<span>AdminPro</span>
+
+</div>
+
+<ul class="menu">
+
+<li>
+<a href="index.html">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="users.html">
+<i class="fa-solid fa-users"></i>
+Users
+</a>
+</li>
+
+<li>
+<a href="analytics.html">
+<i class="fa-solid fa-chart-line"></i>
+Analytics
+</a>
+</li>
+
+<li>
+<a href="orders.html">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</a>
+</li>
+<li class="active">
+    <a href="revenue.html">
+        <i class="fa-solid fa-wallet"></i>
+        Revenue
+    </a>
+</li>
+</ul>
+</aside>
+ <main class="main-content">
+    <section class="cards">
+<!-- Card 1 -->
+
+<div class="card blue">
+
+    <div>
+
+        <h4>Total Revenue</h4>
+
+        <h2 class="counter" data-target="985000">₹0</h2>
+
+        <span>+15% This Month</span>
+
+    </div>
+
+    <i class="fa-solid fa-wallet"></i>
+
+</div>
+
+<!-- Card 2 -->
+
+<div class="card green">
+
+    <div>
+
+        <h4>Net Profit</h4>
+
+        <h2 class="counter" data-target="485000">₹0</h2>
+
+        <span>+10% Growth</span>
+
+    </div>
+
+    <i class="fa-solid fa-chart-line"></i>
+
+</div>
+
+<!-- Card 3 -->
+
+<div class="card orange">
+
+    <div>
+
+        <h4>Total Expenses</h4>
+
+        <h2 class="counter" data-target="500000">₹0</h2>
+
+        <span>Monthly Expenses</span>
+
+    </div>
+
+    <i class="fa-solid fa-money-bill-wave"></i>
+
+</div>
+
+<!-- Card 4 -->
+
+<div class="card purple">
+
+    <div>
+
+        <h4>Transactions</h4>
+
+        <h2 class="counter" data-target="3248">0</h2>
+
+        <span>Completed Payments</span>
+
+    </div>
+
+    <i class="fa-solid fa-credit-card"></i>
+
+</div>
+
+</section>
+
+<!-- Revenue Chart -->
+
+<section class="bottom-section">
+
+<div class="table-card">
+
+<h3>Monthly Revenue Overview</h3>
+
+<canvas id="revenueChart" height="300"></canvas>
+
+</div>
+
+<!-- Recent Transactions -->
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>Transaction ID</th>
+
+            <th>Customer</th>
+
+            <th>Amount</th>
+
+            <th>Status</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr>
+
+            <td>#TRX1025</td>
+
+            <td>Rahul Sharma</td>
+
+            <td>₹12,500</td>
+
+            <td><span class="status completed">Completed</span></td>
+
+        </tr>
+
+        <tr>
+
+            <td>#TRX1026</td>
+
+            <td>Priya Patel</td>
+
+            <td>₹8,450</td>
+
+            <td><span class="status pending">Pending</span></td>
+
+        </tr>
+
+        <tr>
+
+            <td>#TRX1027</td>
+
+            <td>Arjun Kumar</td>
+
+            <td>₹15,200</td>
+
+            <td><span class="status completed">Completed</span></td>
+
+        </tr>
+
+        <tr>
+
+            <td>#TRX1028</td>
+
+            <td>Sneha Singh</td>
+
+            <td>₹6,900</td>
+
+            <td><span class="status processing">Processing</span></td>
+
+        </tr>
+
+        <tr>
+
+            <td>#TRX1029</td>
+
+            <td>Amit Verma</td>
+
+            <td>₹18,300</td>
+
+            <td><span class="status completed">Completed</span></td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+</div>
+
+<!-- Right Panel -->
+
+<div class="right-panel">
+
+    <div class="profile-card">
+
+        <img src="./Saroj.jpg" alt="Saroj">
+
+        <h3>Revenue Summary</h3>
+
+        <p>This Month</p>
+
+    </div>
+
+    <div class="activity-card">
+
+        <h3>Top Revenue Sources</h3>
+
+        <ul>
+
+            <li>💻 Software Sales — ₹4,20,000</li>
+
+            <li>🌐 Web Development — ₹2,15,000</li>
+
+            <li>📱 Mobile Apps — ₹1,80,000</li>
+
+            <li>🤖 AI Projects — ₹1,10,000</li>
+
+            <li>🎯 Other Services — ₹60,000</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- Footer Summary -->
+
+<section class="summary-section">
+
+    <div class="summary-card">
+
+        <h3>Revenue Insights</h3>
+
+        <p>
+            Monthly revenue has increased by
+            <strong>15%</strong> compared to last month.
+            Net profit remains healthy with strong customer growth
+            and consistent order volume.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+<!-- JavaScript -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

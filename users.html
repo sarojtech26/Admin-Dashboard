@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users |Adminpro Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+<div class="container">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-layer-group"></i>
+            <h2>AdminPro</h2>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="users.html">
+                    <i class="fas fa-users"></i>
+                    Users
+                </a>
+            </li>
+            
+<li>
+    <a href="analytics.html">
+        <i class="fas fa-chart-line"></i>
+        Analytics
+    </a>
+</li>
+
+<li>
+    <a href="orders.html">
+        <i class="fas fa-shopping-cart"></i>
+        Orders
+    </a>
+</li>
+<li>
+    <a href="revenue.html">
+        <i class="fas fa-wallet"></i>
+        Revenue
+    </a>
+</li>
+
+<li>
+    <a href="messages.html">
+        <i class="fas fa-envelope"></i>
+        Messages
+    </a>
+</li>
+
+<li>
+    <a href="settings.html">
+        <i class="fas fa-cog"></i>
+        Settings
+    </a>
+</li>
+
+</ul>
+
+</aside>
+
+<main class="main-content">
+    <header class="top-header">
+    
+    <div class="search-box">
+    <i class="fas fa-search"></i>
+    <input type="text"id="searchInput" placeholder="Search users...">
+</div>    
+
+
+    <div class="page-title">
+        <h1>Users Management 👥</h1>
+        <p>Manage all registered users from one place.</p>
+    </div>
+
+    <button class="add-user-btn">
+        <i class="fas fa-plus"></i>
+        Add User
+    </button>
+ </header>
+ <!-- Add User Modal -->
+<div id="userModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <h2>Add New User</h2>
+
+        <input type="text" id="userName" placeholder="Full Name">
+
+        <input type="email" id="userEmail" placeholder="Email Address">
+
+        <select id="userRole">
+            <option>Administrator</option>
+            <option>Manager</option>
+            <option>Staff</option>
+        </select>
+
+        <button id="saveUserBtn">Save User</button>
+    </div>
+</div>
+
+    <div class="users-table">
+        <table>
+    <thead>
+    <tr>
+        <th>User</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+</thead>
+<tbody>
+<tbody id="usersTableBody">
+    
+</tbody>
+
+        </table>
+     </div>
+       </div>
+
+</main>
+
+</div>
+<script src= "script.js"></script>  
+</body>
+</html>
